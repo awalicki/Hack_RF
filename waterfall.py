@@ -7,7 +7,7 @@ import matplotlib.animation as animation
 import threading
 
 
-center_frequency = 870  # mhz
+center_frequency = 5180  # mhz
 samp_rate = 20 # 2-20 mhz (20 to maks)
 fft_size = 8196
 history_rows = 100
@@ -28,7 +28,7 @@ process = None
 def read_hackrf_stream():
     global waterfall_data, is_running, process
 
-    # Używamy hackrf_transfer zamiast hackrf_sweep
+
     cmd = [
         r"D:\Radioconda\Library\bin\hackrf_transfer.exe",
         "-r", "-",
