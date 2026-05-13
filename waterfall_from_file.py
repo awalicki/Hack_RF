@@ -4,7 +4,7 @@ import os
 
 center_frequency = 876  # MHz
 samp_rate = 20
-file_name = "test1.raw"
+file_name = r"D:\hack_rf_drone_13_05\nagranie_876MHz_2026-05-13_15-29-38.raw"
 fft_size = 1024
 min_db = 10
 max_db = 60
@@ -14,7 +14,6 @@ sekundy_do_wczytania = 3
 
 
 def rysuj_wodospad():
-    print(f"Sprawdzanie pliku: {file_name}...")
 
     ilosc_bajtow = int(samp_rate * 1_000_000 * 2 * sekundy_do_wczytania)
 

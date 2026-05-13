@@ -41,9 +41,6 @@ try:
         freq_index = (freq_index + 1) % len(target_frequencies)
 
 
-except KeyboardInterrupt:
-    print("\nprzerwano.")
-
 finally:
     if process and process.poll() is None:
         process.terminate()
