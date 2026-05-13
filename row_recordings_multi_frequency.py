@@ -16,8 +16,8 @@ try:
     while True:
         current_freq = target_frequencies[freq_index]
 
-        timestamp = datetime.now().strftime("%H%M%S")
-        filename = f"raw_iq_{current_freq}MHz_{timestamp}.raw"
+        timestamp = datetime.now().strftime("%Y-%m-%d___%H_%M_%S")
+        filename = f"raw_iq_duration_{hop_interval}freq_{current_freq}MHz_{timestamp}.raw"
 
         cmd = [
             r"D:\Radioconda\Library\bin\hackrf_transfer.exe",
@@ -25,8 +25,8 @@ try:
             "-f", str(int(current_freq * 1_000_000)),
             "-s", str(int(samp_rate * 1_000_000)),
             "-a", "1",
-            "-l", "32",
-            "-g", "40"
+            "-l", "24",
+            "-g", "10"
         ]
 
         print(f"Nagrywanie: {filename} przez {hop_interval} s...")
@@ -45,4 +45,3 @@ finally:
     if process and process.poll() is None:
         process.terminate()
         process.wait()
-    print("Zakończono.")

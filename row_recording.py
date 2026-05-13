@@ -12,7 +12,7 @@ duration = 10
 
 
 def nagraj_sygnal():
-    czas_startu = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    czas_startu = datetime.datetime.now().strftime("%Y-%m-%d___%H_%M_%S")
     nazwa_pliku = f"nagranie_{center_frequency}MHz_{czas_startu}.raw"
     pelna_sciezka = os.path.join(katalog_docelowy, nazwa_pliku)
 
